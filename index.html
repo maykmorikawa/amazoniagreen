@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AMAZONIA GREEN | O Coração do Mundo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,700;1,400&amp;family=Lexend:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#002113",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "outline": "#717973",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#002114",
+                        "surface-tint": "#3f6653",
+                        "primary-container": "#1b4332",
+                        "surface-container": "#edeeef",
+                        "background": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#005235",
+                        "surface-dim": "#d9dadb",
+                        "on-surface-variant": "#414844",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f5",
+                        "primary-fixed": "#c1ecd4",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "tertiary-container": "#4a382d",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#a5d0b9",
+                        "tertiary-fixed": "#f9ddce",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#006c48",
+                        "tertiary-fixed-dim": "#dcc1b2",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#92f7c3",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#a5d0b9",
+                        "secondary-fixed-dim": "#75daa8",
+                        "on-primary-fixed-variant": "#274e3d",
+                        "on-primary-container": "#86af99",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#554338",
+                        "on-background": "#191c1d",
+                        "primary": "#012d1d",
+                        "inverse-surface": "#2e3132",
+                        "on-error": "#ffffff",
+                        "tertiary": "#322319",
+                        "on-tertiary-fixed": "#27180f",
+                        "outline-variant": "#c1c8c2",
+                        "on-tertiary-container": "#baa193",
+                        "secondary-container": "#92f7c3",
+                        "on-secondary-container": "#00734d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Literata"],
+                        "label-md": ["Lexend"],
+                        "headline-sm": ["Lexend"],
+                        "body-lg": ["Literata"],
+                        "display-lg": ["Lexend"],
+                        "display-lg-mobile": ["Lexend"],
+                        "caption": ["Literata"],
+                        "headline-md": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+            display: inline-block;
+            vertical-align: middle
+        }
+        .paper-texture {
+            background-image: radial-gradient(circle at 18% 12%, rgba(117, 218, 168, .14), transparent 32%), radial-gradient(circle at 85% 42%, rgba(63, 102, 83, .1), transparent 28%)
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(1, 45, 29, 0.4), rgba(1, 45, 29, 0.9))
+        }
+        section {
+            scroll-margin-top: 80px
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-xl py-base">
+<div class="font-display-lg text-display-lg text-primary tracking-tight uppercase">AMAZONIA GREEN</div>
+<div class="hidden md:flex gap-lg items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#biodiversidade">Biodiversidade</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#ameacas">Ameaças</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#solucoes">Soluções</a>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md hover:bg-secondary transition-all active:opacity-80">Preservar</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="paper-texture">
+<!-- Hero Section -->
+<header class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Vista aérea da Floresta Amazônica" class="w-full h-full object-cover" src="img/floresta.webp"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-xl w-full">
+<div class="max-w-3xl">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-md text-xs inline-block mb-md uppercase tracking-widest">Patrimônio Global</span>
+<h1 class="font-display-lg text-display-lg md:text-[64px] text-white leading-tight mb-md">O Coração do Mundo em Suas Mãos</h1>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-lg">Com mais de 5 milhões de km², a Amazônia abriga a maior biodiversidade do planeta e regula o clima global. Um santuário vital que exige nossa proteção imediata.</p>
+<div class="flex flex-wrap gap-md">
+<a class="bg-primary-fixed text-on-primary-fixed px-lg py-sm rounded-lg font-headline-sm hover:bg-secondary-fixed transition-all flex items-center gap-base" href="#solucoes">
+                            Agir Agora <span class="material-symbols-outlined">eco</span>
+</a>
+<button class="border border-white/40 text-white px-lg py-sm rounded-lg font-headline-sm hover:bg-white/10 backdrop-blur-sm transition-all">
+                            Explorar Dados
+                        </button>
+</div>
+</div>
+</div>
+</header>
+<!-- Biodiversidade Section -->
+<section class="py-xl max-w-container-max mx-auto px-xl" id="biodiversidade">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Biodiversidade Incomparável</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">A vida pulsa em cada centímetro da floresta, abrigando espécies que não existem em nenhum outro lugar da Terra.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg">
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">pets</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Fauna Amazônica</h3>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">Lar de milhares de espécies de aves, mamíferos e insetos. Das onças-pintadas aos botos-cor-de-rosa, a fauna é a alma do ecossistema.</p>
+<ul class="space-y-sm text-caption">
+<li class="flex items-center gap-base"><span class="material-symbols-outlined text-secondary">check_circle</span> Mais de 1.300 espécies de aves</li>
+<li class="flex items-center gap-base"><span class="material-symbols-outlined text-secondary">check_circle</span> 427 espécies de mamíferos</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed-variant">local_florist</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Flora Amazônica</h3>
+</div>
+<p class="font-body-md text-on-surface-variant mb-md">A farmácia do mundo. Com mais de 40 mil espécies de plantas, a flora provê sustento, oxigênio e curas medicinais ancestrais.</p>
+<ul class="space-y-sm text-caption">
+<li class="flex items-center gap-base"><span class="material-symbols-outlined text-secondary">check_circle</span> 16.000 espécies de árvores</li>
+<li class="flex items-center gap-base"><span class="material-symbols-outlined text-secondary">check_circle</span> 20% do oxigênio produzido por florestas</li>
+</ul>
+</div>
+</div>
+<div class="relative h-full">
+<img alt="Plantio sustentável na Amazônia" class="w-full h-full object-cover rounded-3xl shadow-2xl min-h-[500px]" src="img/plantio.webp"/>
+<div class="absolute bottom-base left-base right-base bg-white/90 backdrop-blur-md p-md rounded-xl border border-outline-variant">
+<p class="font-body-md italic text-primary">"A floresta é viva e cada semente plantada é uma esperança para as futuras gerações."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Ameaças Section -->
+<section class="py-xl bg-surface-container-low" id="ameacas">
+<div class="max-w-container-max mx-auto px-xl">
+<div class="text-center mb-xl">
+<span class="text-error font-label-md uppercase tracking-widest mb-xs block">Alerta Crítico</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Ameaças à Floresta</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">O equilíbrio delicado da Amazônia está sob ataque constante, com consequências devastadoras para o aquecimento global.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Desmatamento -->
+<div class="bg-surface-container-lowest rounded-xl border-t-4 border-t-error shadow-lg flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg">
+<img alt="Desmatamento na floresta amazônica" class="w-full h-full object-cover" src="img/desmatamento.webp"/>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Desmatamento</h3>
+<p class="font-body-md text-on-surface-variant mb-md">A perda da cobertura vegetal destrói habitats e libera bilhões de toneladas de carbono armazenado na atmosfera.</p>
+<div class="mt-auto">
+<div class="mt-md text-error flex items-center gap-xs font-label-md">
+<span class="material-symbols-outlined">warning</span> Impacto Crítico
+                        </div>
+</div>
+</div>
+</div>
+<!-- Queimadas -->
+<div class="bg-surface-container-lowest rounded-xl border-t-4 border-t-error shadow-lg flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg">
+<img alt="Fogo na floresta amazônica" class="w-full h-full object-cover" src="img/queimadas.webp"/>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Queimadas</h3>
+<p class="font-body-md text-on-surface-variant mb-md">
+            Utilizadas para limpeza de terreno, as queimadas descontroladas poluem o ar e empobrecem o solo amazônico.
+            <span class="block mt-sm font-semibold">Em 2024, os focos de incêndio na Amazônia aumentaram drasticamente, liberando milhões de toneladas de CO2.</span>
+</p>
+<div class="mt-auto">
+<div class="bg-error-container/20 p-sm rounded-lg mb-md">
+<p class="font-label-md text-error text-xs uppercase mb-xs">Impacto Climático</p>
+<p class="font-body-md text-on-surface-variant text-sm">As queimadas destroem a biodiversidade e alteram o ciclo de chuvas em todo o continente.</p>
+</div>
+<div class="text-error flex items-center gap-xs font-label-md">
+<span class="material-symbols-outlined">local_fire_department</span> Risco de Savanização
+            </div>
+</div>
+</div>
+</div>
+<!-- Garimpo Ilegal -->
+<div class="bg-surface-container-lowest rounded-xl border-t-4 border-t-error shadow-lg flex flex-col h-full">
+<div class="h-48 overflow-hidden rounded-t-lg">
+<img alt="Garimpo ilegal na Amazônia" class="w-full h-full object-cover" src="img/garimpo.webp"/>
+</div>
+<div class="p-lg flex-grow flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Garimpo Ilegal</h3>
+<p class="font-body-md text-on-surface-variant mb-md">A mineração ilegal contamina rios com mercúrio, ameaçando a saúde de comunidades indígenas e a vida aquática.</p>
+<div class="mt-auto">
+<div class="mt-md text-error flex items-center gap-xs font-label-md">
+<span class="material-symbols-outlined">water_damage</span> Rios Contaminados
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Soluções Section -->
+<section class="py-xl max-w-container-max mx-auto px-xl overflow-hidden" id="solucoes">
+<div class="bg-primary text-on-primary rounded-3xl overflow-hidden shadow-2xl border border-outline relative">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="p-xl flex flex-col justify-center">
+<h2 class="font-display-lg text-display-lg text-white mb-md">Como Proteger a Amazônia?</h2>
+<p class="font-body-lg text-body-lg text-primary-fixed mb-lg">O futuro exige uma abordagem multidisciplinar que una tecnologia, vigilância e consciência ecológica.</p>
+<div class="space-y-md mb-lg">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-fixed">policy</span>
+<div>
+<h4 class="font-headline-sm text-white">Fiscalização Rigorosa</h4>
+<p class="text-on-primary-container text-body-md">Combate direto a crimes ambientais através de órgãos governamentais e satélites.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-fixed">forest</span>
+<div>
+<h4 class="font-headline-sm text-white">Reflorestamento Ativo</h4>
+<p class="text-on-primary-container text-body-md">Recuperação de áreas degradadas com espécies nativas para restaurar corredores ecológicos.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-fixed">precision_manufacturing</span>
+<div>
+<h4 class="font-headline-sm text-white">Tecnologia e Monitoramento</h4>
+<p class="text-on-primary-container text-body-md">Uso de IA e sensores para prever focos de desmatamento em tempo real.</p>
+</div>
+</div>
+</div>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-lg py-sm rounded-lg font-headline-sm hover:shadow-lg transition-all self-start flex items-center gap-sm">
+                            Fazer Parte da Solução
+                            <span class="material-symbols-outlined">volunteer_activism</span>
+</button>
+</div>
+<div class="relative h-80 lg:h-auto">
+<img alt="Tecnologia sustentável na floresta" class="w-full h-full object-cover" src="img/solucao.webp"/>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl text-center px-xl">
+<div class="max-w-3xl mx-auto">
+<div class="inline-block p-md border-2 border-dashed border-outline-variant rounded-full mb-md">
+<span class="material-symbols-outlined text-primary text-[48px]">public</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-sm">Sua consciência é a semente do amanhã</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">Receba atualizações semanais sobre o estado de conservação da Amazônia e saiba como ajudar projetos locais.</p>
+<form class="flex flex-col md:flex-row gap-sm max-w-lg mx-auto">
+<input class="flex-grow bg-white border-b-2 border-tertiary focus:border-primary outline-none px-md py-sm rounded-t-lg font-body-md" placeholder="seu@email.com" type="email"/>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:bg-secondary transition-colors">Cadastrar</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container py-xl px-xl border-t border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-md">
+<div class="flex flex-col gap-xs">
+<div class="font-display-lg text-headline-sm text-primary uppercase">AMAZONIA GREEN</div>
+<p class="font-caption text-caption text-on-surface-variant max-w-xs text-center md:text-left">
+                    © 2024 Projeto Educativo de Preservação Ambiental. Juntos pela Floresta Viva.
+                </p>
+</div>
+<div class="flex gap-lg">
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Dados Científicos</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Parceiros</a>
+<a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Contato</a>
+</div>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">eco</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">shield_with_heart</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-70 transition-opacity">language</span>
+</div>
+</div>
+</footer>
+<script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body></html>
