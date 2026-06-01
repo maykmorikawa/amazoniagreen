@@ -102,6 +102,9 @@
         }
     </script>
 <style>
+        *, *::before, *::after {
+            box-sizing: border-box
+        }
         .material-symbols-outlined {
             font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
             display: inline-block;
@@ -116,41 +119,53 @@
         section {
             scroll-margin-top: 80px
         }
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-secondary-fixed selection:text-on-secondary-container">
 <!-- Top Navigation Bar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-xl py-base">
-<div class="font-display-lg text-display-lg text-primary tracking-tight uppercase">AMAZONIA GREEN</div>
+<div class="flex justify-between items-center max-w-container-max mx-auto px-md sm:px-lg md:px-xl py-sm md:py-base">
+<div class="font-display-lg text-[20px] sm:text-headline-sm md:text-display-lg text-primary tracking-tight uppercase leading-none">AMAZONIA GREEN</div>
 <div class="hidden md:flex gap-lg items-center">
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#biodiversidade">Biodiversidade</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#ameacas">Ameaças</a>
 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors" href="#solucoes">Soluções</a>
 <button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md hover:bg-secondary transition-all active:opacity-80">Preservar</button>
 </div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+<button aria-controls="mobile-menu" aria-expanded="false" class="md:hidden w-10 h-10 rounded-lg flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors" id="mobile-menu-button" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden md:hidden border-t border-outline-variant bg-surface/95 px-md py-sm" id="mobile-menu">
+<div class="flex flex-col gap-xs max-w-container-max mx-auto">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors py-sm" href="#biodiversidade">Biodiversidade</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors py-sm" href="#ameacas">Ameaças</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors py-sm" href="#solucoes">Soluções</a>
+<a class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md text-center hover:bg-secondary transition-all active:opacity-80" href="#solucoes">Preservar</a>
 </div>
 </div>
 </nav>
 <main class="paper-texture">
 <!-- Hero Section -->
-<header class="relative h-[90vh] min-h-[600px] flex items-center overflow-hidden">
+<header class="relative h-[88svh] min-h-[560px] md:h-[90vh] md:min-h-[600px] flex items-center overflow-hidden">
 <div class="absolute inset-0 z-0">
 <img alt="Vista aérea da Floresta Amazônica" class="w-full h-full object-cover" src="img/floresta.webp"/>
 <div class="absolute inset-0 hero-gradient"></div>
 </div>
-<div class="relative z-10 max-w-container-max mx-auto px-xl w-full">
+<div class="relative z-10 max-w-container-max mx-auto px-md sm:px-lg md:px-xl w-full">
 <div class="max-w-3xl">
 <span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full font-label-md text-xs inline-block mb-md uppercase tracking-widest">Patrimônio Global</span>
-<h1 class="font-display-lg text-display-lg md:text-[64px] text-white leading-tight mb-md">O Coração do Mundo em Suas Mãos</h1>
-<p class="font-body-lg text-body-lg text-primary-fixed mb-lg">Com mais de 5 milhões de km², a Amazônia abriga a maior biodiversidade do planeta e regula o clima global. Um santuário vital que exige nossa proteção imediata.</p>
-<div class="flex flex-wrap gap-md">
-<a class="bg-primary-fixed text-on-primary-fixed px-lg py-sm rounded-lg font-headline-sm hover:bg-secondary-fixed transition-all flex items-center gap-base" href="#solucoes">
+<h1 class="font-display-lg text-[32px] sm:text-display-lg-mobile md:text-[64px] text-white leading-tight mb-md">O Coração do Mundo em Suas Mãos</h1>
+<p class="font-body-lg text-body-md sm:text-body-lg text-primary-fixed mb-lg">Com mais de 5 milhões de km², a Amazônia abriga a maior biodiversidade do planeta e regula o clima global. Um santuário vital que exige nossa proteção imediata.</p>
+<div class="flex flex-col sm:flex-row sm:flex-wrap gap-sm sm:gap-md">
+<a class="bg-primary-fixed text-on-primary-fixed px-md md:px-lg py-sm rounded-lg font-headline-sm hover:bg-secondary-fixed transition-all flex items-center justify-center gap-base" href="#solucoes">
                             Agir Agora <span class="material-symbols-outlined">eco</span>
 </a>
-<button class="border border-white/40 text-white px-lg py-sm rounded-lg font-headline-sm hover:bg-white/10 backdrop-blur-sm transition-all">
+<button class="border border-white/40 text-white px-md md:px-lg py-sm rounded-lg font-headline-sm hover:bg-white/10 backdrop-blur-sm transition-all">
                             Explorar Dados
                         </button>
 </div>
@@ -158,14 +173,14 @@
 </div>
 </header>
 <!-- Biodiversidade Section -->
-<section class="py-xl max-w-container-max mx-auto px-xl" id="biodiversidade">
-<div class="text-center mb-xl">
+<section class="py-lg md:py-xl max-w-container-max mx-auto px-md sm:px-lg md:px-xl" id="biodiversidade">
+<div class="text-center mb-lg md:mb-xl">
 <h2 class="font-headline-md text-headline-md text-primary mb-sm">Biodiversidade Incomparável</h2>
 <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">A vida pulsa em cada centímetro da floresta, abrigando espécies que não existem em nenhum outro lugar da Terra.</p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
-<div class="space-y-lg">
-<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-lg md:gap-xl items-center">
+<div class="space-y-md md:space-y-lg">
+<div class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant shadow-sm">
 <div class="flex items-center gap-md mb-md">
 <div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
 <span class="material-symbols-outlined text-on-secondary-container">pets</span>
@@ -178,7 +193,7 @@
 <li class="flex items-center gap-base"><span class="material-symbols-outlined text-secondary">check_circle</span> 427 espécies de mamíferos</li>
 </ul>
 </div>
-<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="bg-surface-container-lowest p-md md:p-lg rounded-xl border border-outline-variant shadow-sm">
 <div class="flex items-center gap-md mb-md">
 <div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
 <span class="material-symbols-outlined text-on-primary-fixed-variant">local_florist</span>
@@ -193,7 +208,7 @@
 </div>
 </div>
 <div class="relative h-full">
-<img alt="Plantio sustentável na Amazônia" class="w-full h-full object-cover rounded-3xl shadow-2xl min-h-[500px]" src="img/plantio.webp"/>
+<img alt="Plantio sustentável na Amazônia" class="w-full h-full object-cover rounded-xl md:rounded-3xl shadow-2xl min-h-[320px] md:min-h-[500px]" src="img/plantio.webp"/>
 <div class="absolute bottom-base left-base right-base bg-white/90 backdrop-blur-md p-md rounded-xl border border-outline-variant">
 <p class="font-body-md italic text-primary">"A floresta é viva e cada semente plantada é uma esperança para as futuras gerações."</p>
 </div>
@@ -201,9 +216,9 @@
 </div>
 </section>
 <!-- Ameaças Section -->
-<section class="py-xl bg-surface-container-low" id="ameacas">
-<div class="max-w-container-max mx-auto px-xl">
-<div class="text-center mb-xl">
+<section class="py-lg md:py-xl bg-surface-container-low" id="ameacas">
+<div class="max-w-container-max mx-auto px-md sm:px-lg md:px-xl">
+<div class="text-center mb-lg md:mb-xl">
 <span class="text-error font-label-md uppercase tracking-widest mb-xs block">Alerta Crítico</span>
 <h2 class="font-headline-md text-headline-md text-primary mb-sm">Ameaças à Floresta</h2>
 <p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">O equilíbrio delicado da Amazônia está sob ataque constante, com consequências devastadoras para o aquecimento global.</p>
@@ -214,7 +229,7 @@
 <div class="h-48 overflow-hidden rounded-t-lg">
 <img alt="Desmatamento na floresta amazônica" class="w-full h-full object-cover" src="img/desmatamento.webp"/>
 </div>
-<div class="p-lg flex-grow flex flex-col">
+<div class="p-md md:p-lg flex-grow flex flex-col">
 <h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Desmatamento</h3>
 <p class="font-body-md text-on-surface-variant mb-md">A perda da cobertura vegetal destrói habitats e libera bilhões de toneladas de carbono armazenado na atmosfera.</p>
 <div class="mt-auto">
@@ -229,7 +244,7 @@
 <div class="h-48 overflow-hidden rounded-t-lg">
 <img alt="Fogo na floresta amazônica" class="w-full h-full object-cover" src="img/queimadas.webp"/>
 </div>
-<div class="p-lg flex-grow flex flex-col">
+<div class="p-md md:p-lg flex-grow flex flex-col">
 <h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Queimadas</h3>
 <p class="font-body-md text-on-surface-variant mb-md">
             Utilizadas para limpeza de terreno, as queimadas descontroladas poluem o ar e empobrecem o solo amazônico.
@@ -252,7 +267,7 @@
 <div class="h-48 overflow-hidden rounded-t-lg">
 <img alt="Garimpo ilegal na Amazônia" class="w-full h-full object-cover" src="img/garimpo.webp"/>
 </div>
-<div class="p-lg flex-grow flex flex-col">
+<div class="p-md md:p-lg flex-grow flex flex-col">
 <h3 class="font-headline-sm text-headline-sm text-primary mb-sm">Garimpo Ilegal</h3>
 <p class="font-body-md text-on-surface-variant mb-md">A mineração ilegal contamina rios com mercúrio, ameaçando a saúde de comunidades indígenas e a vida aquática.</p>
 <div class="mt-auto">
@@ -266,11 +281,11 @@
 </div>
 </section>
 <!-- Soluções Section -->
-<section class="py-xl max-w-container-max mx-auto px-xl overflow-hidden" id="solucoes">
-<div class="bg-primary text-on-primary rounded-3xl overflow-hidden shadow-2xl border border-outline relative">
+<section class="py-lg md:py-xl max-w-container-max mx-auto px-md sm:px-lg md:px-xl overflow-hidden" id="solucoes">
+<div class="bg-primary text-on-primary rounded-xl md:rounded-3xl overflow-hidden shadow-2xl border border-outline relative">
 <div class="grid grid-cols-1 lg:grid-cols-2">
-<div class="p-xl flex flex-col justify-center">
-<h2 class="font-display-lg text-display-lg text-white mb-md">Como Proteger a Amazônia?</h2>
+<div class="p-md sm:p-lg md:p-xl flex flex-col justify-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-md">Como Proteger a Amazônia?</h2>
 <p class="font-body-lg text-body-lg text-primary-fixed mb-lg">O futuro exige uma abordagem multidisciplinar que una tecnologia, vigilância e consciência ecológica.</p>
 <div class="space-y-md mb-lg">
 <div class="flex items-start gap-md">
@@ -295,24 +310,24 @@
 </div>
 </div>
 </div>
-<button class="bg-secondary-fixed text-on-secondary-fixed px-lg py-sm rounded-lg font-headline-sm hover:shadow-lg transition-all self-start flex items-center gap-sm">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-md md:px-lg py-sm rounded-lg font-headline-sm hover:shadow-lg transition-all self-stretch sm:self-start flex items-center justify-center gap-sm">
                             Fazer Parte da Solução
                             <span class="material-symbols-outlined">volunteer_activism</span>
 </button>
 </div>
-<div class="relative h-80 lg:h-auto">
+<div class="relative h-64 md:h-80 lg:h-auto">
 <img alt="Tecnologia sustentável na floresta" class="w-full h-full object-cover" src="img/solucao.webp"/>
 </div>
 </div>
 </div>
 </section>
 <!-- CTA Section -->
-<section class="py-xl text-center px-xl">
+<section class="py-lg md:py-xl text-center px-md sm:px-lg md:px-xl">
 <div class="max-w-3xl mx-auto">
-<div class="inline-block p-md border-2 border-dashed border-outline-variant rounded-full mb-md">
+<div class="inline-block p-sm md:p-md border-2 border-dashed border-outline-variant rounded-full mb-md">
 <span class="material-symbols-outlined text-primary text-[48px]">public</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-primary mb-sm">Sua consciência é a semente do amanhã</h3>
+<h3 class="font-headline-md text-headline-sm md:text-headline-md text-primary mb-sm">Sua consciência é a semente do amanhã</h3>
 <p class="font-body-md text-on-surface-variant mb-lg">Receba atualizações semanais sobre o estado de conservação da Amazônia e saiba como ajudar projetos locais.</p>
 <form class="flex flex-col md:flex-row gap-sm max-w-lg mx-auto">
 <input class="flex-grow bg-white border-b-2 border-tertiary focus:border-primary outline-none px-md py-sm rounded-t-lg font-body-md" placeholder="seu@email.com" type="email"/>
@@ -322,7 +337,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container py-xl px-xl border-t border-outline-variant">
+<footer class="bg-surface-container py-lg md:py-xl px-md sm:px-lg md:px-xl border-t border-outline-variant">
 <div class="flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-md">
 <div class="flex flex-col gap-xs">
 <div class="font-display-lg text-headline-sm text-primary uppercase">AMAZONIA GREEN</div>
@@ -330,7 +345,7 @@
                     © 2024 Projeto Educativo de Preservação Ambiental. Juntos pela Floresta Viva.
                 </p>
 </div>
-<div class="flex gap-lg">
+<div class="flex flex-wrap justify-center gap-md md:gap-lg">
 <a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Dados Científicos</a>
 <a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Parceiros</a>
 <a class="font-caption text-caption text-on-surface-variant hover:text-secondary hover:underline transition-all" href="#">Contato</a>
@@ -343,11 +358,44 @@
 </div>
 </footer>
 <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            const mobileMenuIcon = mobileMenuButton.querySelector('.material-symbols-outlined');
+            const setMobileMenu = (isOpen) => {
+                mobileMenu.classList.toggle('hidden', !isOpen);
+                mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+                if (mobileMenuIcon) {
+                    mobileMenuIcon.textContent = isOpen ? 'close' : 'menu';
+                }
+            };
+
+            mobileMenuButton.addEventListener('click', () => {
+                setMobileMenu(mobileMenu.classList.contains('hidden'));
+            });
+
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => setMobileMenu(false));
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    setMobileMenu(false);
+                }
+            });
+        }
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (!href || href === '#') {
+                    return;
+                }
+
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     target.scrollIntoView({
                         behavior: 'smooth'
